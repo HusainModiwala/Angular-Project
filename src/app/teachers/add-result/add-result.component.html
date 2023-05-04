@@ -1,0 +1,105 @@
+<div
+  *ngIf="alert"
+  class="alert alert-success alert-dismissible fade show"
+  role="alert"
+>
+  <strong>Success</strong> Result Added.
+  <button
+    (click)="closeAlert()"
+    type="button"
+    class="close"
+    data-dismiss="alert"
+    aria-label="Close"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="container col-sm-6">
+  <h3>Add New Result</h3>
+  <form [formGroup]="addResult" (ngSubmit)="collectResult()">
+    <div class="form-group row">
+      <label for="inputRollNo" class="col-sm-2 col-form-label">Roll No</label>
+      <div class="col-sm-10">
+        <input
+          type="number"
+          formControlName="rollNo"
+          class="form-control"
+          placeholder="Roll No"
+          required
+        />
+        <span *ngIf= "rollNo?.invalid && rollNo?.touched" class="text-danger"
+          >Roll no is required</span
+        >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          formControlName="name"
+          class="form-control"
+          placeholder="Name"
+        />
+        <span *ngIf= "name?.invalid && name?.touched" class="text-danger"
+          >Name is required</span
+        >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputDOB" class="col-sm-2 col-form-label"
+        >Date Of Birth</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="date"
+          formControlName="dob"
+          class="form-control"
+          name="inputDOB"
+          placeholder="DOB"
+        />
+        <span *ngIf= "dob?.invalid && dob?.touched" class="text-danger"
+          >DOB is required</span
+        >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputScore" class="col-sm-2 col-form-label">Score</label>
+      <div class="col-sm-10">
+        <input
+          type="number"
+          formControlName="score"
+          class="form-control"
+          name="inputScore"
+          placeholder="Score"
+        />
+        <span *ngIf = "score?.invalid && score?.touched" class="text-danger"
+          >Score is required</span
+        >
+      </div>
+    </div>
+    <div class="btns">
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]= "this.addResult.invalid"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <button (click)="resetForm()" type="button" class="btn btn-info">
+            Clear
+          </button>
+        </div>
+      </div>
+      <a routerLink="/teachers/result-list">Back</a>
+    </div>
+  </form>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,23 @@
+{
+  "students": [
+    {
+      "rollNo": 1,
+      "name": "Hasan",
+      "dob": "2000-06-24",
+      "score": 80,
+      "id": 1
+    }
+  ],
+  "users": [
+    {
+      "email": "sumeet@gmail.com",
+      "password": "Husain@1234",
+      "id": 1
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "Husain@1234",
+      "id": 2
+    }
+  ]
+}

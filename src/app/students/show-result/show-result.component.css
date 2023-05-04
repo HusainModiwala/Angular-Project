@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border-color:black;
+}
+.card-header{
+    color:darkslategray;
+}
+.back{
+    margin-left: 20px;
+}
+.btn{
+    float: right;
+    margin-right: 30px;
+}

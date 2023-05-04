@@ -1,0 +1,10 @@
+.btns{
+    display: flex;
+}
+.btn{
+    margin-right: 20px;
+}
+.btn-danger{
+    float: right;
+    margin-right: 30px;
+}
